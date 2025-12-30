@@ -6,7 +6,8 @@ import re
 from typing import Tuple
 
 # [ENCRYPTED MODE ACTIVE]
-# Core logic modules have been compiled to .pyc binaries for protection (Docker Compatible).
+# Core logic modules have been compiled to .pyc binaries.
+# [SSL BYPASS APPLIED] rental_manager.py ignores ssl certificate errors.
 from .logic.search_manager import SearchManager
 from .logic.transfer_manager import TransferManager
 from .logic.rental_manager import RentalManager
