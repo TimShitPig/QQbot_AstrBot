@@ -1,0 +1,6 @@
+name: astrbot_plugin_mantou_bot
+display_name: 馒头bot
+desc: 集网盘资源搜索、失效链接检测、夸克/百度/UC网盘一键转存于一体的强力助手。
+version: v1.0.0
+author: 馒头
+repo: https://github.com/Soulter/astrbot_plugin_mantou_bot

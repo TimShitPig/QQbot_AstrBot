@@ -1,0 +1,201 @@
+{
+    "search_config": {
+        "description": "搜索与显示设置",
+        "type": "object",
+        "items": {
+            "resource_api": {
+                "description": "搜索源 API 地址列表",
+                "type": "list",
+                "hint": "填入一个或多个 API 地址，例如: [\"http://1.2.3.4:8085\", \"http://5.6.7.8:8085\"]",
+                "obvious_hint": true,
+                "default": []
+            },
+            "page_size": {
+                "description": "每页最大显示条数",
+                "type": "string",
+                "hint": "每页总计最多显示多少条，默认 9",
+                "default": "9"
+            },
+            "links_per_type": {
+                "description": "单网盘每种类型显示上限",
+                "type": "string",
+                "hint": "避免某种网盘屠屏，默认 3，-1表示不限制",
+                "default": "3"
+            },
+            "cache_expiry": {
+                "description": "搜索结果缓存有效期 (分钟)",
+                "type": "string",
+                "hint": "搜索结果序号失效的时间，默认 8",
+                "default": "8"
+            },
+            "netdisk_priority": {
+                "description": "网盘排序优先级",
+                "type": "string",
+                "hint": "quark,baidu,uc",
+                "default": "quark,baidu,uc"
+            },
+            "max_title_length": {
+                "description": "最大标题长度过滤",
+                "type": "string",
+                "hint": "过滤掉标题过长的资源，默认 100",
+                "default": "100"
+            },
+            "max_total_results": {
+                "description": "全网有效资源显示上限",
+                "type": "string",
+                "hint": "搜索结果总数的最大上限，-1 表示不限制，默认 100",
+                "default": "100"
+            },
+            "enable_link_blacklist": {
+                "description": "屏蔽推广链接按钮",
+                "type": "bool",
+                "default": true
+            }
+        }
+    },
+    "quark_config": {
+        "description": "夸克网盘设置",
+        "type": "object",
+        "items": {
+            "cookie": {
+                "description": "夸克账号 (Cookie)",
+                "type": "string",
+                "hint": "登录 pan.quark.cn 获取",
+                "default": ""
+            },
+            "save_folder": {
+                "description": "转存文件夹",
+                "type": "string",
+                "hint": "默认为根目录",
+                "default": ""
+            },
+            "enable_dedup": {
+                "description": "自动去重开关",
+                "type": "bool",
+                "default": true
+            },
+            "enable_validate": {
+                "description": "链接检测开关",
+                "type": "bool",
+                "default": true
+            },
+            "enable_search": {
+                "description": "搜索显示开关",
+                "type": "bool",
+                "default": true
+            }
+        }
+    },
+    "baidu_config": {
+        "description": "百度网盘设置",
+        "type": "object",
+        "items": {
+            "cookie": {
+                "description": "百度账号 (Cookie)",
+                "type": "string",
+                "hint": "登录 pan.baidu.com 获取",
+                "default": ""
+            },
+            "save_folder": {
+                "description": "转存文件夹",
+                "type": "string",
+                "hint": "默认为根目录",
+                "default": ""
+            },
+            "enable_dedup": {
+                "description": "自动去重开关",
+                "type": "bool",
+                "default": true
+            },
+            "enable_validate": {
+                "description": "链接检测开关",
+                "type": "bool",
+                "default": true
+            },
+            "enable_search": {
+                "description": "搜索显示开关",
+                "type": "bool",
+                "default": true
+            }
+        }
+    },
+    "uc_config": {
+        "description": "UC网盘设置",
+        "type": "object",
+        "items": {
+            "cookie": {
+                "description": "UC账号 (Cookie)",
+                "type": "string",
+                "hint": "登录 wan.uc.cn 获取 (请使用手机版UA抓取)",
+                "default": ""
+            },
+            "save_folder": {
+                "description": "转存文件夹",
+                "type": "string",
+                "hint": "默认为根目录",
+                "default": ""
+            },
+            "enable_dedup": {
+                "description": "自动去重开关",
+                "type": "bool",
+                "default": true
+            },
+            "enable_validate": {
+                "description": "链接检测开关",
+                "type": "bool",
+                "default": true
+            },
+            "enable_search": {
+                "description": "搜索显示开关",
+                "type": "bool",
+                "default": true
+            }
+        }
+    },
+    "blacklist_settings": {
+        "description": "黑名单与权限设置",
+        "type": "object",
+        "items": {
+            "min_permission_level": {
+                "description": "拉黑权限门槛",
+                "type": "string",
+                "options": [
+                    "超管",
+                    "群主",
+                    "管理员",
+                    "普通成员"
+                ],
+                "hint": "设定执行拉黑/还原操作的最低权限等级",
+                "default": "管理员"
+            },
+            "link_blacklist": {
+                "description": "已拉黑资源列表 (最新在前)",
+                "type": "list",
+                "hint": "列表项格式: 链接:::标题 (可在 UI 面板增删)",
+                "default": []
+            }
+        }
+    },
+    "rental_settings": {
+        "description": "插件激活",
+        "type": "object",
+        "items": {
+            "address": {
+                "description": "后端 API 地址",
+                "type": "string",
+                "hint": "填入验证后端的 API 地址，例如: http://1.2.3.4:8000",
+                "default": "http://127.0.0.1:8000"
+            },
+            "username": {
+                "description": "激活用户名",
+                "type": "string",
+                "default": ""
+            },
+            "password": {
+                "description": "激活密码",
+                "type": "string",
+                "default": ""
+            }
+        }
+    }
+}
